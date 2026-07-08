@@ -1,0 +1,43 @@
+from flet import Container,Text,Column,Alignment,FontWeight,MainAxisAlignment,CrossAxisAlignment,TextField,Icons,ElevatedButton
+
+class Login(Container):
+    def __init__(self):
+        super().__init__()
+        
+        self._txt_usuario = TextField(icon=Icons.PERSON, label="usuario@correo.com")
+        self._txt_contrasenia = TextField(icon=Icons.LOCK, label="*************")
+        self.txt_resultado = Text()
+        self.content=Column(
+            alignment=MainAxisAlignment.START,
+            horizontal_alignment=CrossAxisAlignment.CENTER,
+            width=480,height=512,
+              spacing=48,
+            controls=[
+
+                Text("Inicio de Sesion", size=32, weight=FontWeight.BOLD),
+                Text("User", size=32, weight=FontWeight.BOLD),
+                self._txt_usuario,
+                Text("Password", size=32, weight=FontWeight.BOLD),
+                self._txt_contrasenia,
+                ElevatedButton("Enviar", on_click=self._click_enviar),
+                
+            ]
+        )
+
+
+    def _click_enviar(self):
+        print("Enviado a consola")
+        usuario = self._txt_usuario.value.strip()
+        password = self._txt_contrasenia.value.strip()
+
+        if usuario == "Admin" and password == "777":
+            self.txt_resultado.value = "Acceso Correcto"
+        
+        else:
+            self.txt_resultado.value = "Acceso Incorrecto"
+
+        print(f"""
+        usuario: {usuario}
+        password: {password}
+        """)
+    
