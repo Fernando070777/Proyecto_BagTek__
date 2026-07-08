@@ -20,7 +20,8 @@ class Login(Container):
                 Text("Password", size=32, weight=FontWeight.BOLD),
                 self._txt_contrasenia,
                 ElevatedButton("Enviar", on_click=self._click_enviar),
-                
+                self.txt_resultado
+
             ]
         )
 
