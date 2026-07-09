@@ -32,8 +32,7 @@ class Login(Container):
                 Text("Password", size=32, weight=FontWeight.BOLD),
                 self._txt_contrasenia,
                 ElevatedButton("Iniciar Sesion", on_click=self._click_enviar, color=ft.Colors.BLACK), 
-                self.txt_resultado
-
+                self.txt_resultado,
             ]
         )
 
