@@ -18,7 +18,7 @@ class Login(Container):
         self.content=Column(
             alignment=MainAxisAlignment.START,
             horizontal_alignment=CrossAxisAlignment.CENTER,
-            width=480,height=512,
+            width=1200,height=720,
               spacing=48,
             controls=[
 
