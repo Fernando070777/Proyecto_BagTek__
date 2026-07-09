@@ -1,11 +1,19 @@
-from flet import Container,Text,Column,Alignment,FontWeight,MainAxisAlignment,CrossAxisAlignment,TextField,Icons,ElevatedButton,CircleAvatar
-
+from flet import Container,Text,Column,Alignment,FontWeight,MainAxisAlignment,CrossAxisAlignment,TextField,Icons,ElevatedButton,CircleAvatar,Colors
+import flet as ft
 class Login(Container):
     def __init__(self):
         super().__init__()
         
-        self._txt_usuario = TextField(icon=Icons.PERSON, label="usuario@correo.com")
-        self._txt_contrasenia = TextField(icon=Icons.LOCK, label="*************")
+        self._txt_usuario = TextField(icon=Icons.PERSON, label="usuario@correo.com",text_style=ft.TextStyle(size=16,
+        color=ft.Colors.WHITE, font_family="ComicSans"),
+        label_style=ft.TextStyle(color=ft.Colors.LIGHT_BLUE_700),
+        hint_style=ft.TextStyle(color=ft.Colors.WHITE_30),)
+
+        self._txt_contrasenia = TextField(icon=Icons.LOCK, label="*************",text_style=ft.TextStyle(size=16,
+        color=ft.Colors.WHITE, font_family="ComicSans"),
+        label_style=ft.TextStyle(color=ft.Colors.LIGHT_BLUE_700),
+        hint_style=ft.TextStyle(color=ft.Colors.WHITE_30),)
+
         self.txt_resultado = Text()
         self.content=Column(
             alignment=MainAxisAlignment.START,
@@ -23,7 +31,7 @@ class Login(Container):
                 self._txt_usuario,
                 Text("Password", size=32, weight=FontWeight.BOLD),
                 self._txt_contrasenia,
-                ElevatedButton("Enviar", on_click=self._click_enviar),
+                ElevatedButton("Iniciar Sesion", on_click=self._click_enviar, color=ft.Colors.BLACK), 
                 self.txt_resultado
 
             ]
