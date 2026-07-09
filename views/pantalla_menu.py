@@ -13,8 +13,7 @@ class PantallaMenu(Container):
                     controls=[
                         Text("Menu principal",
                              size=40,
-                        weight="bold",
-                        color="black87")
+                        weight="bold")
                     ]
                 ),
                 Row(
