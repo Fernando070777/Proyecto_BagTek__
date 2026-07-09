@@ -1,4 +1,4 @@
-from flet import Container,Text,Column,Alignment,FontWeight,MainAxisAlignment,CrossAxisAlignment,TextField,Icons,ElevatedButton
+from flet import Container,Text,Column,Alignment,FontWeight,MainAxisAlignment,CrossAxisAlignment,TextField,Icons,ElevatedButton,CircleAvatar
 
 class Login(Container):
     def __init__(self):
@@ -15,6 +15,10 @@ class Login(Container):
             controls=[
 
                 Text("Inicio de Sesion", size=32, weight=FontWeight.BOLD),
+                CircleAvatar(
+                foreground_image_src="/home/fernando777/workspaces/3erParcial/01_Temperatura_Reactor/Recursos/Logo.png",
+                    radius=50,height=200, width=200
+                ),          
                 Text("User", size=32, weight=FontWeight.BOLD),
                 self._txt_usuario,
                 Text("Password", size=32, weight=FontWeight.BOLD),
